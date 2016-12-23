@@ -87,6 +87,7 @@ public class Main {
                         break;
                     }
                 }
+                clearboard(board);
             }
 
             if(mode == 2)
@@ -568,15 +569,7 @@ public class Main {
                         }
                     }
                 }
-                board[0][0] ='_';
-                board[0][1] ='_';
-                board[0][2] ='_';
-                board[1][0] ='_';
-                board[1][1] ='_';
-                board[1][2] ='_';
-                board[2][0] ='_';
-                board[2][1] ='_';
-                board[2][2] ='_';
+                clearboard(board);
             }
             if(mode == 3)
             {
@@ -618,6 +611,8 @@ public class Main {
                 board[2][2] = 'X';
                 printboard(board);
                 System.out.println("Tie game!");
+
+                clearboard(board);
             }
             System.out.println("Would you like to play again? (input yes or no)");
             String repeat = input2.nextLine();
@@ -699,6 +694,19 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    private static void clearboard(char board[][])
+    {
+        board[0][0] ='_';
+        board[0][1] ='_';
+        board[0][2] ='_';
+        board[1][0] ='_';
+        board[1][1] ='_';
+        board[1][2] ='_';
+        board[2][0] ='_';
+        board[2][1] ='_';
+        board[2][2] ='_';
     }
 
     private static char[][] checkblock(char board[][])
